@@ -6,18 +6,17 @@
 :root {
   --softRed: hsl(7, 99%, 70%);
   --Yellow: hsl(51, 100%, 49%);
-  --darkDesaturatedCyan: hsl(167, 40%, 24%);
+  --darkDesaturatedCyan: #25564b;
   --darkBlue: hsl(198, 62%, 26%);
-  --darkModerateCyan: hsl(168, 34%, 41%);
-  --veryDarkDesaturatedBlue: hsl(212, 27%, 19%);
+  --darkModerateCyan: #458c7e;
+  --veryDarkDesaturatedBlue: #23303e;
   --veryDarkGrayishBlue: hsl(213, 9%, 39%);
   --darkGrayishBlue: hsl(232, 10%, 55%);
   --grayishBlue: hsl(210, 4%, 67%);
-  --white: hsl(0, 0%, 100%);
+  --white: #ffffff;
 }
 .container {
-  display: flex;
-  flex-direction: column;
+  font-size: 0;
 }
 .pageHead {
   .navbar {
@@ -28,9 +27,13 @@
     color: var(--white);
     z-index: 6;
     position: absolute;
-    padding: 20px;
+    padding: 30px 20px;
     .menu {
       display: none;
+    }
+    .navLogo {
+      filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(81deg)
+        brightness(107%) contrast(101%);
     }
   }
   .header {
@@ -40,7 +43,7 @@
     z-index: 6;
     position: absolute;
     top: 10rem;
-    right: 0.5px;
+    left: 12px;
     h1 {
       text-align: center;
       font-size: 40px;
@@ -49,7 +52,7 @@
       font-family: "Fraunces", serif;
       font-weight: 900;
       font-style: normal;
-      letter-spacing: 5px;
+      letter-spacing: 10px;
     }
   }
   .headerImage {
@@ -77,14 +80,16 @@
       font-size: 35px;
       letter-spacing: 2px;
       margin: 20px 0;
+      color: var(--veryDarkDesaturatedBlue);
     }
     p {
       font-family: "Barlow", sans-serif;
       font-weight: 600;
       font-style: normal;
       font-size: 16px;
-      line-height: 25px;
+      line-height: 27px;
       margin-bottom: 30px;
+      color: var(--veryDarkGrayishBlue);
     }
     button {
       text-transform: uppercase;
@@ -92,27 +97,235 @@
       font-weight: 900;
       font-size: 15px;
       letter-spacing: 2px;
+      border-radius: 20px;
+      /* height: 5px;
+      padding: 0 15px; */
+      border: none;
+      /* line-height: 2px; */
+      background-color: var(--white);
+      color: var(--veryDarkDesaturatedBlue);
+    }
+
+    .yellow::after {
+      content: "";
+      height: 7px;
+      background-color: var(--Yellow);
+      display: flex;
+      border-radius: 30px;
+      margin-top: -5%;
+      width: 130px;
+    }
+    .coral::after {
+      background-color: var(--softRed);
+      content: "";
+      height: 7px;
+      display: flex;
+      border-radius: 30px;
+      margin-top: -5%;
+      width: 130px;
     }
   }
+}
 
-  /* .graphicDesign {
-    .graphicDesign img {
-      z-index: 1;
-      position: relative;
-    }
-    .text {
-      z-index: 6;
-      position: absolute;
-      top: 30rem;
-    }
-  } */
+.cherry,
+.orange {
+  z-index: 1;
+  position: relative;
+}
+.graphicDesignText {
+  color: var(--darkDesaturatedCyan);
+  z-index: 3;
+  position: absolute;
+  margin-top: 23rem;
+  text-align: center;
+  padding: 20px;
+}
+h2 {
+  font-family: "Fraunces", serif;
+  font-weight: 900;
+  font-size: 30px;
+  letter-spacing: 2px;
+  margin: 23px 0;
+  text-transform: capitalize;
+}
+p {
+  font-family: "Barlow", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 27px;
+}
+.photographyText {
+  color: var(--darkBlue);
+  z-index: 3;
+  position: absolute;
+  margin-top: 23rem;
+  text-align: center;
+  padding: 20px;
+}
 
-  /* .fruit {
-    z-index: 1;
-    position: relative;
+.testimonials {
+  h2 {
+    font-family: "Fraunces", serif;
+    font-weight: 900;
+    font-size: 17px;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 50px 0;
+    letter-spacing: 5px;
+    color: var(--grayishBlue);
   }
-  .text {
-    z-index: 6;
-    position: absolute;
-  } */
+  img {
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+    width: 70px;
+    margin-bottom: 35px;
+  }
+  h4 {
+    font-family: "Barlow", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 17px;
+    line-height: 27px;
+    text-align: center;
+    padding: 0 40px;
+    margin-bottom: 30px;
+    color: var(--veryDarkGrayishBlue);
+  }
+  h3 {
+    font-family: "Fraunces", serif;
+    font-weight: 900;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 12px;
+    color: var(--veryDarkDesaturatedBlue);
+  }
+  p {
+    font-family: "Barlow", sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 70px;
+    color: var(--grayishBlue);
+  }
+}
+.footer {
+  .pictures {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
+  .footerBottom {
+    background-color: hsl(167, 44%, 70%);
+    .logo {
+      /* filter: invert(1); */
+      filter: invert(29%) sepia(24%) saturate(865%) hue-rotate(116deg)
+        brightness(90%) contrast(90%);
+      display: block;
+      margin: 0 auto;
+      padding: 60px 0;
+      width: 170px;
+    }
+  }
+  .footerNav {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 5rem;
+    h4 {
+      font-family: "Barlow", sans-serif;
+      font-weight: 600;
+      font-size: 17px;
+      color: #25564b;
+    }
+  }
+  .socials {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    padding-bottom: 7rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1919px) {
+  .pageHead {
+    .navbar {
+      .hamburgerMenu {
+        display: none;
+      }
+      .menu {
+        display: block;
+      }
+    }
+    .creatives {
+      top: 65rem;
+      left: 25rem;
+      h1 {
+        font-size: 50px;
+        font-style: normal;
+        letter-spacing: 10px;
+      }
+    }
+    .arrow {
+      top: 78rem;
+      left: 45rem;
+    }
+  }
+  .pageMiddle {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    .texts {
+      text-align: left;
+      padding: 8rem;
+      margin-left: 4rem;
+      h2 {
+        font-size: 35px;
+      }
+    }
+  }
+  .graphicDesignText {
+    margin-top: 40rem;
+    text-align: center;
+    padding: 8rem;
+    width: 50%;
+  }
+  h2 {
+    font-size: 35px;
+  }
+  p {
+    font-size: 20px;
+    line-height: 35px;
+  }
+  .photographyText {
+    margin-top: 40rem;
+    text-align: center;
+    padding: 8rem;
+    width: 50%;
+  }
+  .testimonials {
+    h2 {
+      margin-top: 60px;
+      font-size: 20px;
+    }
+    .clients {
+      display: flex;
+      padding: 0 70px 50px;
+    }
+  }
+  .footer {
+    .pictures {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  .footerNav {
+    display: block;
+    margin: 0 auto;
+    width: 500px;
+  }
 }
