@@ -16,57 +16,65 @@
   --white: #ffffff;
 }
 .container {
-  font-size: 0;
+  /* font-size: 0; */
 }
 .pageHead {
   .navbar {
-    width: 100%;
+    background: url("./images/desktop/image-header.jpg") no-repeat center;
+    background-size: cover;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 20px;
+    height: 100vh;
+    /* width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     color: var(--white);
     z-index: 6;
     position: absolute;
-    padding: 30px 20px;
+     */
     .menu {
       display: none;
     }
-    .navLogo {
-      filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(81deg)
-        brightness(107%) contrast(101%);
+
+    ul {
+      display: flex;
+      justify-content: space-between;
+      gap: 50px;
     }
   }
-  .header {
-    margin-bottom: 0;
-  }
-  .creatives {
-    z-index: 6;
-    position: absolute;
-    top: 10rem;
-    left: 12px;
-    h1 {
-      text-align: center;
-      font-size: 40px;
-      color: var(--white);
-      text-transform: uppercase;
-      font-family: "Fraunces", serif;
-      font-weight: 900;
-      font-style: normal;
-      letter-spacing: 10px;
-    }
-  }
-  .headerImage {
-    width: 100%;
-    z-index: 1;
-    position: relative;
-  }
-  .arrow {
-    z-index: 6;
-    position: absolute;
-    top: 19rem;
-    left: 11.5rem;
+  .navLogo {
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(81deg)
+      brightness(107%) contrast(101%);
   }
 }
+.header {
+  margin-bottom: 0;
+}
+.creatives {
+  z-index: 6;
+  position: absolute;
+  top: 10rem;
+  left: 12px;
+  h1 {
+    text-align: center;
+    font-size: 40px;
+    color: var(--white);
+    text-transform: uppercase;
+    font-family: "Fraunces", serif;
+    font-weight: 900;
+    font-style: normal;
+    letter-spacing: 10px;
+  }
+}
+.arrow {
+  z-index: 6;
+  position: absolute;
+  top: 19rem;
+  left: 11.5rem;
+}
+
 .pageMiddle img {
   width: 100%;
 }
@@ -129,6 +137,7 @@
 
 .cherry,
 .orange {
+  margin-top: -1%;
   z-index: 1;
   position: relative;
 }
@@ -260,10 +269,26 @@ p {
       }
       .menu {
         display: block;
+        /* background-color: red; */
+        ul {
+          list-style-type: none;
+          color: white;
+          font-family: "Barlow", sans-serif;
+          font-weight: 600;
+          /* font-size: 17px; */
+        }
+        button {
+          margin-top: -15%;
+          padding: 10px 20px;
+          border-radius: 20px;
+          border: none;
+          font-family: "Fraunces", serif;
+          font-weight: 600;
+        }
       }
     }
     .creatives {
-      top: 65rem;
+      top: 10rem;
       left: 25rem;
       h1 {
         font-size: 50px;
@@ -272,7 +297,7 @@ p {
       }
     }
     .arrow {
-      top: 78rem;
+      top: 21rem;
       left: 45rem;
     }
   }
@@ -286,6 +311,14 @@ p {
       h2 {
         font-size: 35px;
       }
+    }
+    .egg {
+      grid-column: 2 / 3;
+    }
+
+    .transform {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
     }
   }
   .graphicDesignText {
